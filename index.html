@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreStudio | Linkler</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            gap: 32px;
+            padding: 20px;
+        }
+
+        .vanilla-icon {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Piksel sanatının net görünmesi için tarayıcı ayarı */
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        /* Hover: Yukarı zıplama ve hafif büyüme */
+        .vanilla-icon:hover {
+            transform: translateY(-12px) scale(1.1);
+            filter: drop-shadow(0 15px 20px rgba(0,0,0,0.15));
+        }
+
+        /* Tıklama basılma hissi */
+        .vanilla-icon:active {
+            transform: translateY(-4px) scale(0.95);
+        }
+
+        /* Parlama (Shimmer) Efekti Kabı */
+        .shimmer-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        /* Beyaz Parlama Çizgisi */
+        .shimmer-container::after {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 50%;
+            height: 300%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(45deg);
+            transition: 0s;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .vanilla-icon:hover .shimmer-container::after {
+            opacity: 1;
+            left: 200%;
+            transition: all 0.6s ease-in-out;
+        }
+
+        /* İkon Altı Yazısı (Label) */
+        .label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .vanilla-icon:hover .label {
+            opacity: 1;
+            bottom: -40px;
+        }
+
+        /* İkon Görseli */
+        .icon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="icon-wrapper">
+        <!-- YouTube Bağlantısı -->
+        <a href="https://www.youtube.com/@Markesr" target="_blank" class="vanilla-icon">
+            <div class="shimmer-container">
+                <img src="youtube_icon_bg.png" alt="YouTube Icon" class="icon-img">
+            </div>
+            <span class="label">YouTube</span>
+        </a>
+
+        <!-- Modrinth Bağlantısı -->
+        <a href="https://modrinth.com/user/CoreStudio" target="_blank" class="vanilla-icon">
+            <div class="shimmer-container">
+                <img src="modrinth_icon_bg.png" alt="Modrinth Icon" class="icon-img">
+            </div>
+            <span class="label">Modrinth</span>
+        </a>
+
+        <!-- Discord Bağlantısı -->
+        <a href="https://discord.gg/4TBV9wDzFu" target="_blank" class="vanilla-icon">
+            <div class="shimmer-container">
+                <img src="discord_icon_bg.png" alt="Discord Icon" class="icon-img">
+            </div>
+            <span class="label">Discord</span>
+        </a>
+    </div>
+
+</body>
+</html>
