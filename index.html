@@ -28,36 +28,29 @@
             height: 80px;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            /* Piksel sanatının net görünmesi için tarayıcı ayarı */
             image-rendering: pixelated;
             image-rendering: crisp-edges;
-            /* Dış çerçeve yuvarlatma */
-            border-radius: 20px;
+            border-radius: 0;
             overflow: hidden;
         }
 
-        /* Hover: Yukarı zıplama ve hafif büyüme */
         .vanilla-icon:hover {
             transform: translateY(-12px) scale(1.1);
             filter: drop-shadow(0 15px 20px rgba(0,0,0,0.15));
         }
 
-        /* Tıklama basılma hissi */
         .vanilla-icon:active {
             transform: translateY(-4px) scale(0.95);
         }
 
-        /* Parlama (Shimmer) Efekti Kabı */
         .shimmer-container {
             position: relative;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            /* Resimle uyumlu yuvarlatma */
-            border-radius: 20px;
+            border-radius: 0;
         }
 
-        /* Beyaz Parlama Çizgisi */
         .shimmer-container::after {
             content: "";
             position: absolute;
@@ -83,7 +76,6 @@
             transition: all 0.6s ease-in-out;
         }
 
-        /* İkon Altı Yazısı (Label) */
         .label {
             position: absolute;
             bottom: -30px;
@@ -106,20 +98,18 @@
             bottom: -40px;
         }
 
-        /* İkon Görseli */
         .icon-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            border-radius: 20px;
+            border-radius: 0;
         }
     </style>
 </head>
 <body>
 
     <div class="icon-wrapper">
-        <!-- YouTube Bağlantısı -->
         <a href="https://www.youtube.com/@Markesr" target="_blank" class="vanilla-icon">
             <div class="shimmer-container">
                 <img src="youtube_icon_bg.png" alt="YouTube Icon" class="icon-img">
@@ -127,7 +117,6 @@
             <span class="label">YouTube</span>
         </a>
 
-        <!-- Modrinth Bağlantısı -->
         <a href="https://modrinth.com/user/CoreStudio" target="_blank" class="vanilla-icon">
             <div class="shimmer-container">
                 <img src="modrinth_icon_bg.png" alt="Modrinth Icon" class="icon-img">
@@ -135,7 +124,6 @@
             <span class="label">Modrinth</span>
         </a>
 
-        <!-- Discord Bağlantısı -->
         <a href="https://discord.gg/4TBV9wDzFu" target="_blank" class="vanilla-icon">
             <div class="shimmer-container">
                 <img src="discord_icon_bg.png" alt="Discord Icon" class="icon-img">
